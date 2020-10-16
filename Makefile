@@ -26,6 +26,7 @@ SOURCES		:= asm source resources
 INCLUDES	:= include resources
 DATA		:= data
 MUSIC		:=
+BUILD_TYPE	:= 
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -66,7 +67,7 @@ LIBDIRS	:=	$(LIBGBA)
 ifneq ($(BUILDDIR), $(CURDIR))
 #---------------------------------------------------------------------------------
  
-export OUTPUT	:=	$(CURDIR)/$(TARGET)
+export OUTPUT	:=	$(CURDIR)/$(TARGET)$(BUILD_TYPE)
  
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 					$(foreach dir,$(DATA),$(CURDIR)/$(dir)) \
@@ -122,7 +123,7 @@ $(BUILD):
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
-	@rm -fr $(BUILD) $(TARGET).elf $(TARGET).gba 
+	@rm -fr $(BUILD) $(TARGET).elf $(TARGET)$(BUILD_TYPE).gba 
  
  
 #---------------------------------------------------------------------------------

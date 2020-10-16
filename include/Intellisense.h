@@ -13,4 +13,7 @@
 #define __extension__
 #endif
 
+#define INLINE static inline
+#define NULL (void*)0
+
 #endif //__INTELLISENSE_H__
